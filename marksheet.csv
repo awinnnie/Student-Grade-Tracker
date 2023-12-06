@@ -56,12 +56,12 @@ id,Name,Gender,Date of Birth,Section,Science,English,History,Maths
 55456,Lief,Male,12/23/1994,B,55,64,56,69
 56789,Olenka,Female,12/24/1994,B,53,53,49,43
 56789,Olenka,Female,12/24/1994,B,53,53,49,43
-57012,Hinze,Male,12/25/1994,A,46,37,63,17
+57012,Hinze,Male,12/25/1994,A,46,37,110,17
 58345,Issie,Male,12/26/1994,A,64,1,74,6
 59678,Yardley,Female,12/27/1994,C,41,37,26,65
 60901,Winslow,Female,12/28/1994,B,61,71,77,64
 61234,Bobbee,Female,12/29/1994,C,16,57,90,14
-62567,Fanny,Female,12/30/1994,C,49,90,13,98
+62567,Fanny,Female,12/30/1994,C,101,90,13,98
 63890,Massimiliano,Male,12/31/1994,A,16,45,44,5
 64123,Shannon,Male,1/1/1995,B,78,74,31,85
 65456,Mufi,Female,1/2/1995,C,88,72,31,27
