@@ -77,11 +77,40 @@ plt.show()
 
 
 # Plotting means by subject
-table = pd.read_csv('marksheet.csv') 
 
 fig, ax = plt.subplots()
 subjects = ["Science", "English", "History", "Maths"]
 subject_means = table[['Science', 'English', 'History', 'Maths']].mean()
 plt.bar(subjects, subject_means)
 plt.title("the means of the subjects")
+plt.show()
+
+# Plotting means by sections
+
+Sum_A = 0
+Sum_B = 0
+Sum_C = 0
+Count_A = 0
+Count_B = 0
+Count_C = 0
+for i, j in table.iterrows():
+    count = 0
+    if j['Section'] == "A":
+        Count_A += 1
+        Sum_A += j["mean"]
+    elif j['Section'] == "B":
+        Count_B += 1
+        Sum_B += j["mean"]
+    else:
+        Count_C += 1
+        Sum_C += j["mean"]
+
+Mean_A = Sum_A/Count_A
+Mean_B = Sum_B/Count_B
+Mean_C = Sum_C/Count_C
+Sections = ['A', 'B', 'C']
+Means = [Mean_A, Mean_B, Mean_C]
+fig, ax = plt.subplots()
+plt.bar(Sections, Means)
+plt.title("Means based on Sections")
 plt.show()
