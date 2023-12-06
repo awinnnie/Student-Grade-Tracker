@@ -77,7 +77,7 @@ id,Name,Gender,Date of Birth,Section,Science,English,History,Maths
 76789,Cherie,Male,1/13/1995,C,32,31,89,30
 77012,David,Female,1/14/1995,B,27,2,63,100
 78345,Jody,Male,1/15/1995,B,87,45,73,48
-79678,Rosalynd,Male,1/16/1995,C,27,96,89,49
+79678,Rosalynd,Male,1/16/1995,C,27,96,89,
 80901,Elton,Male,1/17/1995,B,13,18,80,82
 81234,Teresita,Male,1/18/1995,A,1,90,42,94
 82567,Dannel,Male,1/19/1995,C,84,85,14,24
@@ -91,7 +91,7 @@ id,Name,Gender,Date of Birth,Section,Science,English,History,Maths
 90901,Cobby,Male,6/15/1985,C,64,20,86,84
 91234,Linn,Male,9/30/1993,C,23,2,42,43
 92567,Daffi,Female,3/12/1996,A,79,82,99,81
-93890,Morganne,Female,2/18/1990,A,22,86,9,38
+93890,Morganne,Female,2/18/1990,A,,86,9,38
 94123,Dael,Female,8/25/1989,A,43,65,18,26
 95456,Ario,Male,1/1/1995,A,64,18,73,37
 96789,Georgia,Female,11/19/1982,A,58,10,99,44
