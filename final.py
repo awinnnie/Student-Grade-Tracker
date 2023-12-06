@@ -28,6 +28,8 @@ print(f"\nDuplicate Rows Removed: {dup_removed}")
 print(f"\nCleaned Dataset Statistics:")
 print(table.info())  #information about the cleaned dataframe
 
+
+
 # Plotting mean, high, low
 
 subjects = ["Science", "English", "History", "Maths"] #encloses the needed columns for average grade calculation
@@ -42,8 +44,6 @@ for i, j in table.iterrows():
         Low_Performers.append(j["Name"])
     if j['mean']>=60 and j['mean']<=85:
         Mid_Performers.append(j["Name"])
-
-
 
 def y_values(list):
     '''This function returns a list with the average grades of students which are passed to the function in a list'''
@@ -72,4 +72,16 @@ plt.tight_layout() #adjusts the layout so that the names do not overlap
 ax.legend() #Shows the legend
 
 # Display the plot
+plt.show()
+
+
+
+# Plotting means by subject
+table = pd.read_csv('marksheet.csv') 
+
+fig, ax = plt.subplots()
+subjects = ["Science", "English", "History", "Maths"]
+subject_means = table[['Science', 'English', 'History', 'Maths']].mean()
+plt.bar(subjects, subject_means)
+plt.title("the means of the subjects")
 plt.show()
