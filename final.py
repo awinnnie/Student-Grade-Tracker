@@ -4,7 +4,7 @@ from plotting import *
 
 # Reading the data
 table = read_data('marksheet.csv')
-print(table)
+
 
 # # Removing unrelated columns
 # table = clean_columns(table)
@@ -26,7 +26,7 @@ print(f"\nDuplicate Rows Removed: {dup_removed}")
 # Statistics about the cleaned dataset
 print(f"\nCleaned Dataset Statistics:")
 print(table.info())  #information about the cleaned dataframe
-
+print(table)
 subjects = ["Science", "English", "History", "Maths"] #encloses the needed columns for average grade calculation
 table["mean"] = table[subjects].mean(axis = 1) #Calculates the average of grades for each student
 
