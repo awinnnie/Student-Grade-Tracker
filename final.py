@@ -1,6 +1,7 @@
 from Reading_the_data import *
 from Data_sanitazation import *
 from plotting import *
+from report import *
 
 # Reading the data
 table = read_data('marksheet.csv')
@@ -44,3 +45,6 @@ plot_gender(table)
 
 # Plotting based on age
 plot_age_performance(table)
+
+# Generating reports
+generate_report(table.values);
