@@ -20,3 +20,6 @@ def remove_dup(table):
     global dup_removed # Number of duplicates
     dup_removed = before_dup - after_dup
     return dup_removed
+
+def to_string(table):
+    table[["Name", "Gender", "Section"]] = table[["Name", "Gender", "Section"]].astype('string')

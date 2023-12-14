@@ -19,7 +19,7 @@ table = missing_to_zero(table) # changes missing values to zero
 miss_val_new = missing_values(table)
 print(f"\nUpdated missing Values: ")
 print(miss_val_new)
-
+to_string(table)
 # Removing duplicate rows
 dup_removed = remove_dup(table)
 print(f"\nDuplicate Rows Removed: {dup_removed}")
