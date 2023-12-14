@@ -106,13 +106,15 @@ def plot_gender(table):
     plt.show()
     
 def plot_age_performance(table):
+    '''This function collects all the ages into a list to plot those in a scatter plot'''
     def age_calc(birthdate):
+        '''This function calculates the exact age of a person based on whether it has passed or not. It implements the "datetime" module and returns the exact age.'''
         today = datetime.today()
         birthdate = datetime.strptime(birthdate, '%m/%d/%Y') #this is a standard syntax for "unpacking" the string input into a year- month - day datetime format
         age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
         if today.month < birthdate.month or (today.month == birthdate.month and today.day < birthdate.day):
             months = 12 - (birthdate.month - today.month) - 1
-            days = 30 - (birthdate.day - today.day)  # Assuming 30 days in a month for simplicity
+            days = 30 - (birthdate.day - today.day)
         else:
             months = today.month - birthdate.month
             days = today.day - birthdate.day
@@ -126,11 +128,9 @@ def plot_age_performance(table):
     Ages = []
     for i, j in table.iterrows():
         Ages.append(age_calc(j["Date of Birth"]))
-
+    #This part is for the creation of the line of best fit for the scatter plot
     coefficients = np.polyfit(Ages, table['mean'], 1)
     poly_fit = np.poly1d(coefficients)
-
-# Generate y values for the line of best fit
     y_fit = poly_fit(Ages)
 
     plt.scatter(Ages, table['mean'], label='Data Points')
@@ -138,15 +138,15 @@ def plot_age_performance(table):
     
 
 
-    # Add labels and title
+    # Adds labels and title
     plt.xlabel('Ages of the students')
     plt.ylabel('Means of the students')
     plt.title('The correlation between performance and age')
 
-    # Add a legend
+    # Adds a legend
     plt.legend()
 
-    # Show the plot
+    # Shows the plot
     plt.show()
     
 # plot_high_low(table)
