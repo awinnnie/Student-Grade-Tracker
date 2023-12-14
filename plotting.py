@@ -86,8 +86,6 @@ def plot_sections(table):
     
 def plot_gender(table):
     """compares the average grade for math based on gender in a bar chart"""
-    F_mean = 0
-    M_mean = 0
     F_math = []
     M_math = []
     for i, j in table.iterrows():
