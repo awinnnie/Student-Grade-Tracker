@@ -26,6 +26,11 @@ html_template = '''<!DOCTYPE html>
   background-color: #04AA6D;
   color: white;
 }
+.id {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
 </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,16 +55,41 @@ html_template = '''<!DOCTYPE html>
   </tr>
   $$REPLACE_ME$$
 </table>
-
+<script>
+  const tds = document.querySelectorAll('.id');
+  tds.forEach(td => {
+    td.addEventListener('click', e => {
+      const childNodes = e.target.parentNode.childNodes;
+      const data = [];
+      childNodes.forEach(node => {
+        data.push(node.textContent);
+      });
+      document.body.innerHTML = `
+        <h3>Student ID: ${data[0]}</h3>
+        <h3>Name: ${data[1]}</h3>
+        <h3>Gender: ${data[2]}</h3>
+        <h3>Date of birth: ${data[3]}</h3>
+        <h3>Section: ${data[4]}</h3>
+        <h3>Science: ${data[5]}</h3>
+        <h3>English: ${data[6]}</h3>
+        <h3>History: ${data[7]}</h3>
+        <h3>Maths: ${data[8]}</h3>
+        <h3>Overall: ${data[9]}</h3>
+      `;
+    });
+  })
+</script>
 </body>
 </html>'''
 
 def generate_report(students):
     print("👩‍🎓👨‍🎓 Summoning the academic spirits to compile the students' report... Expect some magical grades and mystical attendance records! 📜✨")
+    # variable which contains final dynamic HTML content
     final_string = ''
     for row in students:
-        rowString = ''
-        for data in row:
+        # variable which contains dynamic HTML content for each row
+        rowString = f'<td class="id">{row[0]}</td>'
+        for data in row[1:]:
             rowString += f'<td>{data}</td>'
         final_string += f'<tr>{rowString}</tr>'
     report_file = open('report.html', 'w')
