@@ -8,6 +8,7 @@ subjects = ["Science", "English", "History", "Maths"] #encloses the needed colum
 table["mean"] = table[subjects].mean(axis = 1) #Calculates the average of grades for each student
 
 def plot_high_low(table):
+    '''This function just plots high, mid and low performers by scanning through the given pandas dataframe and then plots the corresponding average grades in a bar chart'''
     High_Performers = []
     Low_Performers = []
     Mid_Performers = []
