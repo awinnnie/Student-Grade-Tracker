@@ -49,7 +49,6 @@ def plot_high_low(table):
 def plot_subjects(table):
     """Plots a bar chart comparing the performance based on the subjects. Takes the dataframe as an argument."""
     fig, ax = plt.subplots()
-    subjects = ["Science", "English", "History", "Maths"]
     subject_means = table[['Science', 'English', 'History', 'Maths']].mean()
     plt.bar(subjects, subject_means)
     plt.title("the means of the subjects")
