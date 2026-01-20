@@ -1,0 +1,1 @@
+Python-based data analysis pipeline for tracking and analyzing student academic performance. It reads a raw grade sheet, performs data cleaning and preprocessing, computes summary statistics, visualizes performance patterns, and generates a structured report.
